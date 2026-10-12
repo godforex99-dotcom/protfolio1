@@ -1,0 +1,2414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="GA Web builds professional business websites, landing pages, online stores and web applications. Get a website designed to grow your business.">
+
+  <meta name="theme-color" content="#07152e">
+
+  <title>GA Web | Turn Your Business Into a Digital Brand</title>
+
+  <style>
+    :root {
+      --navy: #07152e;
+      --navy-light: #10264b;
+      --blue: #1769ff;
+      --blue-light: #eaf1ff;
+      --white: #ffffff;
+      --text: #17233b;
+      --muted: #68758b;
+      --border: #e4e9f2;
+      --background: #f7f9fd;
+      --green: #14a76c;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(7, 21, 46, .08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1140px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-light {
+      background: var(--background);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -1.2px;
+      margin-bottom: 15px;
+      color: var(--navy);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0755e5;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.4);
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--navy);
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: var(--blue);
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: rgba(7, 21, 46, .97);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 20px rgba(0,0,0,.1);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #69a0ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .91rem;
+      color: #e3eaf7;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: #80aaff;
+    }
+
+    .nav-links .nav-cta {
+      background: var(--blue);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: white;
+      border: 0;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(23,105,255,.22), transparent 35%),
+        linear-gradient(135deg, #07152e 0%, #0b2045 60%, #102c59 100%);
+      color: white;
+      padding: 105px 0 95px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 7px 13px;
+      background: rgba(105,160,255,.13);
+      border: 1px solid rgba(105,160,255,.35);
+      color: #b9d2ff;
+      border-radius: 30px;
+      font-size: .82rem;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 5.3vw, 4.65rem);
+      line-height: 1.08;
+      letter-spacing: -2.7px;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 span {
+      color: #70a4ff;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      color: #c4d0e4;
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-bottom: 35px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 19px;
+      color: #d7e2f5;
+      font-size: .87rem;
+    }
+
+    .hero-proof span::first-letter {
+      color: #71e5b0;
+    }
+
+    .website-preview {
+      background: white;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      transform: rotate(1deg);
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 5px 15px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #d2d9e5;
+    }
+
+    .preview-address {
+      margin-left: 10px;
+      background: #f1f4f9;
+      color: #748099;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: .7rem;
+      flex: 1;
+    }
+
+    .preview-screen {
+      border-radius: 10px;
+      overflow: hidden;
+      min-height: 330px;
+      background: #f0f4ff;
+    }
+
+    .preview-nav {
+      background: white;
+      padding: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .76rem;
+      font-weight: bold;
+    }
+
+    .preview-body {
+      padding: 37px 23px;
+      background: linear-gradient(145deg, #eaf1ff, #fff);
+    }
+
+    .preview-body small {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .preview-body h3 {
+      font-size: 1.85rem;
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 13px 0;
+    }
+
+    .preview-body p {
+      color: var(--muted);
+      font-size: .83rem;
+      margin-bottom: 19px;
+    }
+
+    .preview-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: var(--blue);
+      color: white;
+      border-radius: 6px;
+      font-size: .78rem;
+    }
+
+    .preview-stats {
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 18px 10px;
+      text-align: center;
+      gap: 5px;
+    }
+
+    .preview-stats strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--navy);
+    }
+
+    .preview-stats span {
+      font-size: .65rem;
+      color: var(--muted);
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      border-bottom: 1px solid var(--border);
+      background: white;
+      padding: 27px 0;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .benefit-icon {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 1.2rem;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .benefit small {
+      display: block;
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    /* SERVICES */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 25px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #b6cbff;
+    }
+
+    .service-card.featured {
+      border: 2px solid var(--blue);
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .popular {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: var(--blue);
+      color: white;
+      border-radius: 30px;
+      padding: 5px 12px;
+      font-size: .72rem;
+      font-weight: bold;
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 13px;
+      font-size: 1.45rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .service-description {
+      color: var(--muted);
+      font-size: .91rem;
+      min-height: 62px;
+    }
+
+    .price {
+      margin: 21px 0 5px;
+      font-size: 2.15rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--navy);
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-bottom: 25px;
+      flex: 1;
+    }
+
+    .feature-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f2f7;
+      font-size: .88rem;
+      color: #47536a;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: bold;
+      margin-right: 9px;
+    }
+
+    .service-card .btn {
+      width: 100%;
+    }
+
+    .pricing-note {
+      margin-top: 27px;
+      padding: 18px 20px;
+      background: var(--blue-light);
+      border-radius: 12px;
+      color: #25446f;
+      font-size: .89rem;
+    }
+
+    /* OTHER SERVICES */
+
+    .other-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .other-card {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: white;
+    }
+
+    .other-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    .other-card p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 23px;
+    }
+
+    .process-card {
+      padding: 25px 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+    }
+
+    .process-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #c4d7ff;
+      margin-bottom: 12px;
+    }
+
+    .process-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+      transition: .25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-visual {
+      min-height: 210px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(140deg, #e7efff, #f7f9ff);
+    }
+
+    .project-mockup {
+      width: 100%;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 12px 30px rgba(7,21,46,.1);
+    }
+
+    .project-mockup span {
+      display: block;
+      height: 7px;
+      width: 35%;
+      background: #c5d7ff;
+      border-radius: 10px;
+      margin-bottom: 11px;
+    }
+
+    .project-mockup strong {
+      display: block;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .project-mockup div {
+      height: 55px;
+      border-radius: 6px;
+      background: linear-gradient(110deg, #1769ff, #7fa9ff);
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 7px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin-bottom: 15px;
+    }
+
+    .project-link {
+      color: var(--blue);
+      font-size: .89rem;
+      font-weight: bold;
+    }
+
+    .portfolio-warning {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* WHY US */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .why-panel {
+      background: var(--navy);
+      color: white;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .why-panel h3 {
+      font-size: 1.8rem;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .why-panel p {
+      color: #c4d0e4;
+      margin-bottom: 23px;
+    }
+
+    .why-list {
+      list-style: none;
+    }
+
+    .why-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      color: #e2eaf8;
+    }
+
+    .why-list li::before {
+      content: "✓";
+      color: #75e4b0;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .why-copy h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: var(--navy);
+    }
+
+    .why-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* TESTIMONIALS */
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .stars {
+      color: #f2a900;
+      letter-spacing: 3px;
+      margin-bottom: 13px;
+    }
+
+    .review-card blockquote {
+      color: #4e5a70;
+      font-size: .93rem;
+      margin-bottom: 20px;
+    }
+
+    .review-author {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .review-avatar {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .review-author strong {
+      display: block;
+      font-size: .9rem;
+    }
+
+    .review-author small {
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    .review-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    /* REVIEW FORM */
+
+    .form-card {
+      max-width: 720px;
+      margin: 35px auto 0;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .form-card h3 {
+      margin-bottom: 7px;
+      color: var(--navy);
+    }
+
+    .form-card > p {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: .9rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: .87rem;
+      font-weight: bold;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #d9e0ec;
+      border-radius: 8px;
+      background: white;
+      color: var(--text);
+      outline: none;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(23,105,255,.1);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-card .btn {
+      width: 100%;
+    }
+
+    .form-message {
+      margin-top: 14px;
+      font-size: .9rem;
+      color: var(--green);
+    }
+
+    /* AFFILIATE */
+
+    .affiliate-section {
+      background:
+        radial-gradient(circle at 90% 15%, rgba(66,133,255,.24), transparent 32%),
+        var(--navy);
+      color: white;
+    }
+
+    .affiliate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .affiliate-section .eyebrow {
+      color: #8cb5ff;
+    }
+
+    .affiliate-section h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .affiliate-section .affiliate-copy {
+      color: #c4d0e4;
+      margin-bottom: 22px;
+    }
+
+    .commission-highlight {
+      display: inline-block;
+      background: rgba(112,228,176,.12);
+      border: 1px solid rgba(112,228,176,.35);
+      color: #82f0bc;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 23px;
+    }
+
+    .affiliate-steps {
+      list-style: none;
+      margin: 23px 0;
+    }
+
+    .affiliate-steps li {
+      padding: 9px 0;
+      color: #e0e9f8;
+    }
+
+    .affiliate-steps strong {
+      color: white;
+    }
+
+    .affiliate-box {
+      background: white;
+      color: var(--text);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.2);
+    }
+
+    .affiliate-box h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .affiliate-box > p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 22px;
+    }
+
+    .calculator-result {
+      margin: 16px 0 20px;
+      padding: 18px;
+      background: var(--blue-light);
+      border-radius: 10px;
+    }
+
+    .calculator-result small {
+      display: block;
+      color: #50678d;
+    }
+
+    .calculator-result strong {
+      font-size: 2rem;
+      color: var(--blue);
+    }
+
+    .affiliate-terms {
+      color: #aebed7;
+      font-size: .8rem;
+      margin-top: 17px;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 21px 0;
+      background: none;
+      border: none;
+      text-align: left;
+      color: var(--navy);
+      font-weight: bold;
+      cursor: pointer;
+      gap: 20px;
+    }
+
+    .faq-question span {
+      color: var(--blue);
+      font-size: 1.4rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 22px;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 45px;
+    }
+
+    .contact-copy h2 {
+      font-size: 2.6rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: var(--navy);
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact-detail {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .contact-detail span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-form {
+      background: var(--background);
+      border-radius: 17px;
+      padding: 28px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #040d1e;
+      color: white;
+      padding: 55px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+
+    .footer-about p {
+      color: #aab8ce;
+      max-width: 340px;
+      margin-top: 14px;
+      font-size: .9rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #aab8ce;
+      margin: 8px 0;
+      font-size: .89rem;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      color: #aab8ce;
+      font-size: .83rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      background: #20c66a;
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 7px 25px rgba(0,0,0,.2);
+      z-index: 900;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 950px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 22px 5%;
+        background: var(--navy);
+        align-items: stretch;
+        flex-direction: column;
+        gap: 17px;
+        border-top: 1px solid rgba(255,255,255,.12);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .website-preview {
+        max-width: 540px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-card:last-child,
+      .project-card:last-child {
+        grid-column: auto;
+      }
+
+      .other-services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid,
+      .affiliate-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.7px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 17px 10px;
+      }
+
+      .benefit {
+        align-items: flex-start;
+      }
+
+      .benefit small {
+        font-size: .72rem;
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .review-grid,
+      .other-services,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-description {
+        min-height: auto;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .form-card,
+      .contact-form,
+      .affiliate-box {
+        padding: 22px;
+      }
+
+      .why-panel {
+        padding: 25px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .contact-copy h2 {
+        font-size: 2.1rem;
+      }
+
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">GA <span>WEB.</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#affiliate">Affiliate</a></li>
+          <li><a href="#contact" class="nav-cta">Get a Website</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="hero-tag">Your Business Deserves to Be Online</span>
+
+          <h1>
+            Turn Your Business Into a
+            <span>Digital Brand.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Your customers are searching online. Give them a professional
+            place to discover your business, explore your services and
+            contact you. GA Web builds modern websites that help your
+            business earn trust, reach more people and grow.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              Explore Our Services →
+            </a>
+            <a href="#portfolio" class="btn btn-outline">
+              View Our Work
+            </a>
+          </div>
+
+          <div class="hero-proof">
+            <span>✓ Mobile-friendly websites</span>
+            <span>✓ Clear pricing</span>
+            <span>✓ Personal support</span>
+          </div>
+        </div>
+
+        <div class="website-preview">
+          <div class="preview-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <div class="preview-address">yourbusiness.com</div>
+          </div>
+
+          <div class="preview-screen">
+            <div class="preview-nav">
+              <span>YOUR BRAND</span>
+              <span>Home &nbsp; Services &nbsp; Contact</span>
+            </div>
+
+            <div class="preview-body">
+              <small>WELCOME TO YOUR ONLINE STORE</small>
+              <h3>Make Your Next Customer Say Yes.</h3>
+              <p>
+                Present your business professionally and make it easier
+                for customers to take the next step.
+              </p>
+              <span class="preview-button">Get Started →</span>
+            </div>
+
+            <div class="preview-stats">
+              <div><strong>24/7</strong><span>Online presence</span></div>
+              <div><strong>Mobile</strong><span>Friendly design</span></div>
+              <div><strong>SEO</strong><span>Setup included</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+      <div class="container benefit-grid">
+
+        <div class="benefit">
+          <div class="benefit-icon">⌘</div>
+          <div>
+            <strong>Professional Design</strong>
+            <small>Build trust with visitors</small>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">▣</div>
+          <div>
+            <strong>Mobile Responsive</strong>
+            <small>Works across screen sizes</small>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">↗</div>
+          <div>
+            <strong>SEO Setup</strong>
+            <small>Help search engines discover you</small>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">♡</div>
+          <div>
+            <strong>Ongoing Guidance</strong>
+            <small>Support when you need it</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MAIN SERVICES -->
+    <section class="section section-light" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our Packages</span>
+          <h2>A Professional Website Is an Investment in Your Business.</h2>
+          <p>
+            Choose the website that fits your business today. Every package
+            starts at ₦50,000 and is designed around your goals, your brand
+            and the customers you want to reach.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <!-- PACKAGE 1 -->
+          <article class="service-card">
+            <div class="service-icon">↗</div>
+            <h3>Landing Page Website</h3>
+            <p class="service-description">
+              A focused, attractive page designed to introduce your
+              business and encourage customers to take action.
+            </p>
+
+            <div class="price">₦50,000</div>
+            <p class="price-note">Starting price · One-page website</p>
+
+            <ul class="feature-list">
+              <li>Custom one-page design</li>
+              <li>Mobile-friendly layout</li>
+              <li>About and service sections</li>
+              <li>Contact and WhatsApp buttons</li>
+              <li>Basic on-page SEO setup</li>
+              <li>Contact form layout</li>
+              <li>Free domain offer for the first year*</li>
+              <li>Launch guidance</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-dark"
+              data-package="Landing Page Website — ₦50,000">
+              Choose This Package
+            </a>
+          </article>
+
+          <!-- PACKAGE 2 -->
+          <article class="service-card featured">
+            <span class="popular">POPULAR CHOICE</span>
+            <div class="service-icon">▤</div>
+            <h3>Business Website</h3>
+            <p class="service-description">
+              A complete five-page website that presents your business,
+              builds credibility and helps customers find what they need.
+            </p>
+
+            <div class="price">₦80,000</div>
+            <p class="price-note">Starting price · Five pages</p>
+
+            <ul class="feature-list">
+              <li>Up to five agreed pages</li>
+              <li>Home, About, Services and Contact</li>
+              <li>One additional page of your choice</li>
+              <li>Responsive mobile design</li>
+              <li>Basic on-page SEO setup</li>
+              <li>WhatsApp and contact links</li>
+              <li>Free domain offer for the first year*</li>
+              <li>Launch guidance and testing</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary"
+              data-package="Five-Page Business Website — ₦80,000">
+              Choose This Package →
+            </a>
+          </article>
+
+          <!-- PACKAGE 3 -->
+          <article class="service-card">
+            <div class="service-icon">▦</div>
+            <h3>E-commerce Website</h3>
+            <p class="service-description">
+              An online store where customers can browse products, add
+              items to their cart and place orders.
+            </p>
+
+            <div class="price">₦150,000</div>
+            <p class="price-note">Starting price · Online store</p>
+
+            <ul class="feature-list">
+              <li>Custom online store design</li>
+              <li>Product catalogue and categories</li>
+              <li>Shopping cart functionality</li>
+              <li>Order and checkout flow</li>
+              <li>Payment gateway integration setup</li>
+              <li>Basic on-page SEO setup</li>
+              <li>Free domain offer for the first year*</li>
+              <li>Order-management features as agreed</li>
+              <li>Launch testing and guidance</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-dark"
+              data-package="E-commerce Website — ₦150,000">
+              Build My Online Store
+            </a>
+          </article>
+
+        </div>
+
+        <div class="pricing-note">
+          <strong>What about the free domain?</strong>
+          The free domain offer applies to an eligible domain and the
+          agreed first-year package. Renewal fees, premium domains,
+          hosting, third-party services and payment-provider charges may
+          be separate. Confirm the exact inclusions before payment.
+          Advanced features may require a custom quote.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OTHER SERVICES -->
+    <section class="section" id="extra-services">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">More Digital Solutions</span>
+          <h2>More Than Just Website Design.</h2>
+          <p>
+            Need something beyond a standard business website?
+            We can discuss a solution tailored to your requirements.
+          </p>
+        </div>
+
+        <div class="other-services">
+
+          <article class="other-card">
+            <h3>⚙️ Backend Development</h3>
+            <p>
+              Server-side features, database integration, secure
+              authentication and custom business logic.
+            </p>
+          </article>
+
+          <article class="other-card">
+            <h3>🛒 Advanced E-commerce</h3>
+            <p>
+              Custom order workflows, payment verification, seller
+              features and product-management dashboards.
+            </p>
+          </article>
+
+          <article class="other-card">
+            <h3>📊 Admin Dashboards</h3>
+            <p>
+              Custom interfaces for managing orders, products, content
+              and business operations.
+            </p>
+          </article>
+
+          <article class="other-card">
+            <h3>🔎 SEO & Website Improvement</h3>
+            <p>
+              Technical improvements, metadata, page structure and
+              other agreed search-engine optimisation tasks.
+            </p>
+          </article>
+
+          <article class="other-card">
+            <h3>🔄 Website Redesign</h3>
+            <p>
+              Give an outdated website a cleaner look, better navigation
+              and a more useful mobile experience.
+            </p>
+          </article>
+
+          <article class="other-card">
+            <h3>🔧 Maintenance & Updates</h3>
+            <p>
+              Website updates, content changes, bug fixes and ongoing
+              support under an agreed maintenance plan.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="portfolio-warning">
+          Advanced backend projects and integrations are assessed
+          individually. Features, delivery time and pricing are agreed
+          before work begins.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-light" id="process">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Our Process</span>
+          <h2>From Your Idea to a Live Website.</h2>
+          <p>
+            You don't need to understand coding. Tell us what your
+            business needs, and we'll guide you through the process.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Tell Us Your Goal</h3>
+            <p>
+              We discuss your business, audience, features and budget.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Plan & Design</h3>
+            <p>
+              We agree on the layout, pages, features and project scope.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Build & Test</h3>
+            <p>
+              We develop the website and test the agreed features.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">04</div>
+            <h3>Launch & Support</h3>
+            <p>
+              We publish the site and explain how to use its features.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Selected Projects</span>
+          <h2>Explore What We Can Build for You.</h2>
+          <p>
+            Different businesses need different solutions. Here are
+            examples of website concepts and project types to showcase.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-mockup">
+                <span>GA WEB</span>
+                <strong>A Strong First Impression for Your Brand.</strong>
+                <div></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Business Landing Page</h3>
+              <p>
+                A focused landing page for presenting services,
+                building trust and generating enquiries.
+              </p>
+              <a href="#contact" class="project-link"
+                data-package="Business Landing Page">
+                Request a Similar Website →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-mockup">
+                <span>ONLINE STORE</span>
+                <strong>Everything Your Customers Need in One Place.</strong>
+                <div style="background:linear-gradient(110deg,#0c244a,#517ed0)"></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>E-commerce Store</h3>
+              <p>
+                An online shopping experience with product listings,
+                cart functionality and an order flow.
+              </p>
+              <a href="https://godforex99-dotcom.github.io/godwin-tec/" class="project-link"
+                data-package="E-commerce Website">
+                Request an Online Store →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="project-mockup">
+                <span>FOOD & HOSPITALITY</span>
+                <strong>Make Every Visit to Your Website Count.</strong>
+                <div style="background:linear-gradient(110deg,#184d38,#76b59b)"></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Restaurant Website</h3>
+              <p>
+                A digital home for a restaurant's menu, business
+                information, location and customer enquiries.
+              </p>
+              <a href="https://godforex99-dotcom.github.io/resturant/" class="project-link"
+                data-package="Restaurant Website">
+                Build a Restaurant Website →
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="portfolio-warning">
+          These are illustrative website concepts. Replace them with
+          screenshots, live links and details from your actual projects
+          before presenting them as completed client work.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-light" id="about">
+      <div class="container why-grid">
+
+        <div class="why-panel">
+          <h3>We Believe Every Serious Business Deserves a Professional Online Presence.</h3>
+          <p>
+            GA Web helps businesses establish that presence through
+            modern design, useful features and practical digital solutions.
+          </p>
+
+          <ul class="why-list">
+            <li>Websites tailored to your business goals</li>
+            <li>Clear communication throughout the project</li>
+            <li>Designs made for phones, tablets and computers</li>
+            <li>Practical guidance from planning to launch</li>
+            <li>Solutions that can grow with your requirements</li>
+          </ul>
+        </div>
+
+        <div class="why-copy">
+          <span class="eyebrow">About GA Web</span>
+          <h2>Your Vision. Our Code. A Better Online Presence.</h2>
+
+          <p>
+            GA Web is a web design and development brand focused on
+            helping businesses move beyond relying only on social media
+            and build a dedicated online presence.
+          </p>
+
+          <p>
+            We create websites that give businesses a professional
+            platform to present their services, showcase their products,
+            answer customer questions and make it easier for people
+            to get in touch.
+          </p>
+
+          <p>
+            Whether you are starting a business or improving an existing
+            one, our goal is to understand what you need and build a
+            website around those needs.
+          </p>
+
+          <a href="#contact" class="btn btn-primary">
+            Let's Discuss Your Project →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Client Feedback</span>
+          <h2>Trust Is Built Through Real Experiences.</h2>
+          <p>
+            Great work should speak for itself. As clients complete
+            projects with GA Web, this section can feature their
+            genuine feedback and experiences.
+          </p>
+        </div>
+
+        <div class="review-grid">
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              he is fast and reliable
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">C1</div>
+              <div>
+                <strong></strong>
+                <small></small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              GA web is the best web desiger out there 
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">C2</div>
+              <div>
+                <strong> blessed</strong>
+                <small>very clean and fast</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              got my website after just 2 days 
+            </blockquote>
+            <div class="review-author">
+              <div class="review-avatar">C3</div>
+              <div>
+                <strong>jamse</strong>
+                <small>afforable and quick</small>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="review-note">
+          
+        </p>
+
+        <!-- FRONT-END REVIEW FORM -->
+        <div class="form-card">
+          <h3>Worked With GA Web?</h3>
+          <p>
+          
+          </p>
+
+          <form id="reviewForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="reviewName">Your name</label>
+                <input id="reviewName" name="name" required
+                  placeholder="Enter your name">
+              </div>
+
+              <div class="field">
+                <label for="reviewRating">Your rating</label>
+                <select id="reviewRating" name="rating" required>
+                  <option value="5">★★★★★ — Excellent</option>
+                  <option value="4">★★★★ — Very good</option>
+                  <option value="3">★★★ — Good</option>
+                  <option value="2">★★ — Fair</option>
+                  <option value="1">★ — Needs improvement</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reviewText">Your feedback</label>
+              <textarea id="reviewText" name="review" required
+                placeholder="Tell us about your experience..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              Submit Review via WhatsApp
+            </button>
+
+            <p class="form-message" id="reviewMessage"
+              aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AFFILIATE PROGRAM -->
+    <section class="section affiliate-section" id="affiliate">
+      <div class="container affiliate-grid">
+
+        <div>
+          <span class="eyebrow">GA Web Referral Program</span>
+
+          <h2>Know a Business That Needs a Website? Earn 10%.</h2>
+
+          <p class="affiliate-copy">
+            You don't have to know how to code or build websites to earn
+            through referrals. Connect a business owner who needs a
+            professional website with GA Web. If they become a paying
+            client through your eligible referral, you can earn a
+            commission.
+          </p>
+
+          <div class="commission-highlight">
+            Earn 10% Commission Per Eligible Referral
+          </div>
+
+          <ul class="affiliate-steps">
+            <li><strong>01.</strong> Register your interest in the program.</li>
+            <li><strong>02.</strong> Refer a business that needs a website.</li>
+            <li><strong>03.</strong> We confirm the referral and project.</li>
+            <li><strong>04.</strong> Receive your commission after the agreed
+              payment conditions are met.</li>
+          </ul>
+
+          <p class="affiliate-copy">
+            Share your referral link with entrepreneurs, fashion brands,
+            restaurants, shops, service providers and other businesses
+            that need an online presence.
+          </p>
+        </div>
+
+        <div class="affiliate-box">
+          <h3>See What Your Referral Could Earn</h3>
+          <p>
+            Select a package to calculate a 10% commission example.
+            Actual commission is subject to the referral terms.
+          </p>
+
+          <div class="field">
+            <label for="affiliatePackage">Website package</label>
+            <select id="affiliatePackage">
+              <option value="50000">Landing Page — ₦50,000</option>
+              <option value="80000">Five-Page Website — ₦80,000</option>
+              <option value="150000" selected>E-commerce — ₦150,000</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="referralCount">Number of eligible clients</label>
+            <select id="referralCount">
+              <option value="1">1 client</option>
+              <option value="3">3 clients</option>
+              <option value="5">5 clients</option>
+              <option value="10">10 clients</option>
+            </select>
+          </div>
+
+          <div class="calculator-result">
+            <small>Illustrative referral commission</small>
+            <strong id="commissionResult">₦15,000</strong>
+            <small id="commissionBreakdown">
+              10% of ₦150,000 for 1 eligible client
+            </small>
+          </div>
+
+          <a href="#contact" class="btn btn-primary"
+            style="width:100%" id="affiliateJoin">
+            Join the Referral Program →
+          </a>
+
+          <p class="affiliate-terms">
+            Commission is calculated on the eligible website development
+            fee actually received, excluding refunds and any excluded
+            charges. The referral must be attributable to you and not
+            already registered by another referrer. Payment timing,
+            eligibility, cancellations and other terms must be agreed
+            with GA Web. Registration alone does not guarantee earnings.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-light" id="faq">
+      <div class="container">
+
+        <div class="section-heading" style="margin-left:auto;margin-right:auto;text-align:center">
+          <span class="eyebrow">Frequently Asked Questions</span>
+          <h2>Questions Before You Get Started?</h2>
+          <p>
+            Here are answers to some common questions about our services.
+          </p>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Why does my business need a website?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              A website gives your business a dedicated online presence
+              where people can learn about your services, view your work,
+              find contact details and make enquiries. It can complement
+              your social media marketing and help build credibility.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Will my website work on phones?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Responsive design is included in our standard packages,
+              so the website is designed to adapt to phones, tablets and
+              desktop screens. We also test the agreed layouts before launch.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Does SEO guarantee that I will rank first on Google?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              No. Our packages include basic on-page SEO setup, which helps
+              search engines understand your pages. Search rankings depend
+              on many factors, and no responsible developer can guarantee
+              a first-place ranking.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is the domain really free?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              The package includes an eligible first-year domain offer,
+              subject to the agreed domain and package terms. Premium
+              domains, renewals, hosting and third-party services may
+              cost extra. We will confirm the details before the project
+              starts.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can my e-commerce website accept online payments?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, online payments can be integrated where supported.
+              Secure payment processing and server-side payment verification
+              require appropriate backend implementation. Payment gateway
+              fees and any extra features are subject to the project agreement.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I earn through the affiliate program?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Refer a new business to GA Web. When the referral is accepted
+              under the program terms and the client pays for an eligible
+              website project, your commission is 10% of the qualifying fee.
+              Tracking and payouts must be confirmed with GA Web.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+          <span class="eyebrow">Let's Work Together</span>
+          <h2>Ready to Give Your Business a Professional Online Presence?</h2>
+
+          <p>
+            Tell us about your business and what you want your website
+            to achieve. We'll discuss your needs, recommend a suitable
+            package and agree on the project scope.
+          </p>
+
+          <div class="contact-detail">
+            <strong>WhatsApp</strong>
+            <span>Quick enquiries and project discussions</span>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Services</strong>
+            <span>Business websites, online stores and custom development</span>
+          </div>
+
+          <div class="contact-detail">
+            <strong>Pricing</strong>
+            <span>Website packages start at ₦50,000</span>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <h3>Tell Us About Your Project</h3>
+
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="customerName">Your name</label>
+                <input id="customerName" name="name" required
+                  placeholder="Your full name">
+              </div>
+
+              <div class="field">
+                <label for="customerBusiness">Business name</label>
+                <input id="customerBusiness" name="business"
+                  placeholder="Your business">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="customerEmail">Email address (optional)</label>
+              <input id="customerEmail" name="email" type="email"
+                placeholder="you@example.com">
+            </div>
+
+            <div class="field">
+              <label for="customerService">What do you need?</label>
+              <select id="customerService" name="service" required>
+                <option value="">Choose a service</option>
+                <option>Landing Page — ₦50,000</option>
+                <option>Five-Page Website — ₦80,000</option>
+                <option>E-commerce Website — ₦150,000</option>
+                <option>Backend Development</option>
+                <option>Admin Dashboard</option>
+                <option>Website Redesign</option>
+                <option>Affiliate Program</option>
+                <option>Other Custom Project</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="customerMessage">Tell us more</label>
+              <textarea id="customerMessage" name="message"
+                placeholder="What does your business do? What features do you need?"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              Send Enquiry on WhatsApp →
+            </button>
+
+            <p class="form-message" id="contactMessage"
+              aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a href="#home" class="logo">GA <span>WEB.</span></a>
+          <p>
+            We help businesses establish a professional online presence
+            through modern websites, e-commerce solutions and custom
+            web development.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <a href="#about">About GA Web</a>
+          <a href="#services">Our Packages</a>
+          <a href="#portfolio">Our Portfolio</a>
+          <a href="#reviews">Client Reviews</a>
+          <a href="#affiliate">Affiliate Program</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Get Started</h3>
+          <a href="#contact">Request a Website</a>
+          <a href="#extra-services">Custom Development</a>
+          <a href="#faq">Frequently Asked Questions</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> GA Web. All rights reserved.</span>
+        <span>Designed to help your business grow online.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="#" id="whatsappFloat" class="whatsapp-float"
+    aria-label="Chat with GA Web on WhatsApp" title="Chat with us">
+    W
+  </a>
+
+  <script>
+    /*
+      IMPORTANT:
+      Replace the placeholder below with your WhatsApp number.
+      Use country code + number, without +, spaces or dashes.
+      Example format for Nigeria: 2348012345678
+    */
+    const WHATSAPP_NUMBER = "2349126178626";
+
+    function openWhatsApp(message) {
+      if (!/^234\d{10}$/.test(WHATSAPP_NUMBER)) {
+        alert(
+          "Please set your real WhatsApp number in the code before using this feature."
+        );
+        return;
+      }
+
+      const url =
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    // MOBILE NAVIGATION
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // PACKAGE BUTTONS: PRESELECT PACKAGE IN CONTACT FORM
+    document.querySelectorAll("[data-package]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const packageName = button.dataset.package;
+        const select = document.getElementById("customerService");
+
+        const matchingOption = Array.from(select.options).find(function (option) {
+          return packageName.toLowerCase().includes(
+            option.textContent.split(" — ")[0].toLowerCase()
+          );
+        });
+
+        if (matchingOption) {
+          select.value = matchingOption.value;
+        } else if (packageName.toLowerCase().includes("restaurant")) {
+          select.value = "Other Custom Project";
+          document.getElementById("customerMessage").value =
+            "I need a restaurant website.";
+        }
+      });
+    });
+
+    // AFFILIATE COMMISSION CALCULATOR
+    const affiliatePackage = document.getElementById("affiliatePackage");
+    const referralCount = document.getElementById("referralCount");
+    const commissionResult = document.getElementById("commissionResult");
+    const commissionBreakdown = document.getElementById("commissionBreakdown");
+
+    function updateCommission() {
+      const projectPrice = Number(affiliatePackage.value);
+      const clients = Number(referralCount.value);
+      const commission = projectPrice * 0.10 * clients;
+
+      commissionResult.textContent = commission.toLocaleString("en-NG", {
+        style: "currency",
+        currency: "NGN",
+        maximumFractionDigits: 0
+      });
+
+      commissionBreakdown.textContent =
+        "10% of " +
+        projectPrice.toLocaleString("en-NG", {
+          style: "currency",
+          currency: "NGN",
+          maximumFractionDigits: 0
+        }) +
+        " × " + clients + (clients === 1 ? " eligible client" : " eligible clients");
+    }
+
+    affiliatePackage.addEventListener("change", updateCommission);
+    referralCount.addEventListener("change", updateCommission);
+    updateCommission();
+
+    // AFFILIATE JOIN BUTTON
+    document.getElementById("affiliateJoin").addEventListener("click", function () {
+      const message =
+        "Hello GA Web! I am interested in joining the GA Web Affiliate Program. " +
+        "Please explain the registration, referral tracking, commission and payout terms.";
+      this.href = "#contact";
+
+      // The contact form can be used to register interest.
+      document.getElementById("customerService").value = "Affiliate Program";
+      document.getElementById("customerMessage").value = message;
+    });
+
+    // REVIEW FORM: SEND FEEDBACK TO WHATSAPP
+    document.getElementById("reviewForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("reviewName").value.trim();
+      const rating = document.getElementById("reviewRating").value;
+      const review = document.getElementById("reviewText").value.trim();
+
+      if (!name || !review) {
+        return;
+      }
+
+      const message =
+        "GA Web — Client Review Submission\n\n" +
+        "Name: " + name + "\n" +
+        "Rating: " + rating + "/5\n" +
+        "Feedback: " + review + "\n\n" +
+        "Please confirm before publishing this review.";
+
+      document.getElementById("reviewMessage").textContent =
+        "Your WhatsApp message is being prepared.";
+
+      openWhatsApp(message);
+    });
+
+    // CONTACT FORM: PREPARE WHATSAPP ENQUIRY
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const business = document.getElementById("customerBusiness").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      const service = document.getElementById("customerService").value;
+      const details = document.getElementById("customerMessage").value.trim();
+
+      if (!name || !service) {
+        return;
+      }
+
+      const message =
+        "Hello GA Web! I would like to discuss a website project.\n\n" +
+        "Name: " + name + "\n" +
+        "Business: " + (business || "Not provided") + "\n" +
+        "Email: " + (email || "Not provided") + "\n" +
+        "Service: " + service + "\n" +
+        "Project details: " + (details || "I would like to discuss my requirements.") +
+        "\n\nPlease let me know the next steps.";
+
+      document.getElementById("contactMessage").textContent =
+        "Your WhatsApp enquiry is being prepared.";
+
+      openWhatsApp(message);
+    });
+
+    // FAQ ACCORDION
+    document.querySelectorAll(".faq-question").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const item = button.closest(".faq-item");
+        const wasOpen = item.classList.contains("open");
+
+        document.querySelectorAll(".faq-item").forEach(function (faq) {
+          faq.classList.remove("open");
+          faq.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          faq.querySelector(".faq-question span").textContent = "+";
+        });
+
+        if (!wasOpen) {
+          item.classList.add("open");
+          button.setAttribute("aria-expanded", "true");
+          button.querySelector("span").textContent = "−";
+        }
+      });
+    });
+
+    // WHATSAPP FLOATING BUTTON
+    document.getElementById("whatsappFloat").addEventListener("click", function (event) {
+      event.preventDefault();
+      openWhatsApp("Hello GA Web! I would like to enquire about your website services.");
+    });
+
+    // CURRENT YEAR
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
